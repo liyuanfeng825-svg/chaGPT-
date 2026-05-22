@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatGPT 对话快捷删除</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="mark" aria-hidden="true">⌫</span>
+        <div>
+          <h1>快捷删除</h1>
+          <p>悬停对话，点击垃圾桶直接删除。</p>
+        </div>
+      </header>
+
+      <label class="row">
+        <span>
+          <strong>启用插件</strong>
+          <small>只在 ChatGPT 页面生效</small>
+        </span>
+        <input id="enabled" type="checkbox">
+      </label>
+
+      <label class="row">
+        <span>
+          <strong>显示提示</strong>
+          <small>删除成功或失败时短暂提示</small>
+        </span>
+        <input id="showToast" type="checkbox">
+      </label>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

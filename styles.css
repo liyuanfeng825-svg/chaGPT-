@@ -1,0 +1,205 @@
+.cgpt-delete-helper-item {
+  position: relative !important;
+}
+
+.cgpt-delete-helper-button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: rgb(142, 142, 160);
+  cursor: pointer;
+  display: flex;
+  height: 28px;
+  justify-content: center;
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 120ms ease, background-color 120ms ease, color 120ms ease;
+  width: 28px;
+  z-index: 8;
+}
+
+.cgpt-delete-helper-item:hover > .cgpt-delete-helper-button,
+.cgpt-delete-helper-button:focus-visible,
+.cgpt-delete-helper-item.cgpt-delete-helper-busy > .cgpt-delete-helper-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cgpt-delete-helper-button:hover,
+.cgpt-delete-helper-button:focus-visible {
+  background: rgba(239, 68, 68, 0.14);
+  color: rgb(220, 38, 38);
+  outline: none;
+}
+
+.cgpt-delete-helper-button svg {
+  fill: none;
+  height: 16px;
+  pointer-events: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 16px;
+}
+
+.cgpt-delete-helper-button[aria-busy="true"] svg {
+  animation: cgpt-delete-helper-spin 850ms linear infinite;
+}
+
+.cgpt-delete-helper-master-toggle {
+  align-items: center;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  color: rgb(107, 114, 128);
+  contain: layout paint style;
+  cursor: pointer;
+  display: flex;
+  gap: 7px;
+  height: 32px;
+  justify-content: center;
+  padding: 0 8px;
+  position: fixed;
+  right: 25px;
+  top: 55px;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+  width: 70px;
+  z-index: 2147483000;
+}
+
+.cgpt-delete-helper-master-toggle:hover {
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
+}
+
+.cgpt-delete-helper-master-toggle[data-enabled="true"] {
+  background: rgba(236, 253, 245, 0.92);
+  border-color: rgba(16, 185, 129, 0.28);
+  color: rgb(5, 150, 105);
+}
+
+.cgpt-delete-helper-master-icon {
+  align-items: center;
+  display: flex;
+  height: 18px;
+  justify-content: center;
+  width: 18px;
+}
+
+.cgpt-delete-helper-master-icon svg {
+  fill: none;
+  height: 16px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 16px;
+}
+
+.cgpt-delete-helper-master-track {
+  background: rgba(107, 114, 128, 0.28);
+  border-radius: 999px;
+  height: 18px;
+  padding: 2px;
+  transition: background-color 180ms ease;
+  width: 34px;
+}
+
+.cgpt-delete-helper-master-thumb {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.22);
+  display: block;
+  height: 14px;
+  transform: translateX(0);
+  transition: transform 190ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 14px;
+}
+
+.cgpt-delete-helper-master-toggle[data-enabled="true"] .cgpt-delete-helper-master-track {
+  background: rgb(16, 185, 129);
+}
+
+.cgpt-delete-helper-master-toggle[data-enabled="true"] .cgpt-delete-helper-master-thumb {
+  transform: translateX(16px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .cgpt-delete-helper-master-toggle {
+    background: rgba(32, 33, 35, 0.82);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+    color: rgb(209, 213, 219);
+  }
+
+  .cgpt-delete-helper-master-toggle[data-enabled="true"] {
+    background: rgba(6, 78, 59, 0.72);
+    border-color: rgba(52, 211, 153, 0.32);
+    color: rgb(167, 243, 208);
+  }
+}
+
+@media (max-width: 700px) {
+  .cgpt-delete-helper-master-toggle {
+    right: 48px;
+    top: 54px;
+  }
+}
+
+html.cgpt-delete-helper-stealth [role="menu"],
+html.cgpt-delete-helper-stealth [data-radix-menu-content],
+html.cgpt-delete-helper-stealth [data-radix-popper-content-wrapper],
+html.cgpt-delete-helper-stealth [role="dialog"],
+html.cgpt-delete-helper-stealth [data-radix-dialog-content],
+html.cgpt-delete-helper-stealth [aria-modal="true"] {
+  opacity: 0.01 !important;
+  transition: none !important;
+}
+
+html.cgpt-delete-helper-stealth [data-radix-popper-content-wrapper],
+html.cgpt-delete-helper-stealth [role="dialog"],
+html.cgpt-delete-helper-stealth [data-radix-dialog-content],
+html.cgpt-delete-helper-stealth [aria-modal="true"] {
+  filter: opacity(0.01) !important;
+}
+
+.cgpt-delete-helper-toast {
+  background: rgba(32, 33, 35, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  color: #fff;
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  left: 50%;
+  opacity: 0;
+  padding: 9px 13px;
+  pointer-events: none;
+  position: fixed;
+  transform: translate(-50%, 8px);
+  transition: opacity 140ms ease, transform 140ms ease;
+  z-index: 2147483647;
+}
+
+.cgpt-delete-helper-toast[data-visible="true"] {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.cgpt-delete-helper-toast[data-type="error"] {
+  background: rgba(127, 29, 29, 0.96);
+}
+
+@keyframes cgpt-delete-helper-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
